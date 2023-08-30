@@ -8,7 +8,15 @@ router.get('/notes', (req, res) => {
     })
     .catch((err) => {
         return res.status(500).json(err);
-    })
-})
+    });
+});
+
+router.post('/notes', (req, res) => {
+    store.postNote(req.body)
+    .then(note => res.json(note))
+    .catch((err) => {
+        return res.status(500).json(err);
+    });
+});
 
 module.exports = router;
