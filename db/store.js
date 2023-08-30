@@ -31,6 +31,16 @@ class Store {
             return note
         });
     };
+    deleteNote(noteId){
+        return this.allNotes()
+        .then((allNotesResult) => {
+            return allNotesResult.filter((note) => {
+                return note.id !== noteId
+            })
+        }) .then((updatedData) => {
+            return this.write(updatedData);
+        })
+    }
 
 };
 
