@@ -5,6 +5,8 @@ const htmlRoutes = require('./routes/htmlRoutes');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+
+// The following code block tells our application what routes to take, what middleware to use and how to use it.
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
